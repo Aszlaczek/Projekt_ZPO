@@ -38,14 +38,20 @@ namespace Projekt_AWzorek_167366
                 MessageBox.Show("Proszę wpisać nazwę nawyku", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Habit newHabit = new Habit(this.Inp_name.Text);
             
+
 
             // show info message
             MessageBox.Show("Dodano nowy nawyk: " + this.Inp_name.Text + "\nOpis: " + this.Inp_desc.Text, "Dodano nowy nawyk", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Habit newHabit = new Habit(this.Inp_name.Text, this.Inp_desc.Text);
+            Program.HabitList.AddHabit(newHabit);
+
+            Program.HabitList.WriteToFile();
+
             // clear inputs
             this.Inp_name.Text = "";
             this.Inp_desc.Text = "";
+
             // close form
             this.Close();
 

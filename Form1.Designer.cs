@@ -32,13 +32,18 @@ namespace Projekt_AWzorek_167366
             Btn_add = new Button();
             Lb_title = new Label();
             Btn_close = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            Box_group = new GroupBox();
+            showHabit1 = new ShowHabit();
+            tableLayoutPanel1.SuspendLayout();
+            Box_group.SuspendLayout();
             SuspendLayout();
             // 
             // Btn_add
             // 
-            Btn_add.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Btn_add.Dock = DockStyle.Right;
             Btn_add.Font = new Font("Segoe UI", 12F);
-            Btn_add.Location = new Point(569, 369);
+            Btn_add.Location = new Point(829, 3);
             Btn_add.MaximumSize = new Size(150, 50);
             Btn_add.MinimumSize = new Size(150, 50);
             Btn_add.Name = "Btn_add";
@@ -62,9 +67,8 @@ namespace Projekt_AWzorek_167366
             // 
             // Btn_close
             // 
-            Btn_close.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             Btn_close.Font = new Font("Segoe UI", 12F);
-            Btn_close.Location = new Point(50, 369);
+            Btn_close.Location = new Point(3, 3);
             Btn_close.Name = "Btn_close";
             Btn_close.Size = new Size(150, 50);
             Btn_close.TabIndex = 2;
@@ -72,19 +76,55 @@ namespace Projekt_AWzorek_167366
             Btn_close.UseVisualStyleBackColor = true;
             Btn_close.Click += Btn_close_Click;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(Btn_close, 0, 0);
+            tableLayoutPanel1.Controls.Add(Btn_add, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Bottom;
+            tableLayoutPanel1.Location = new Point(0, 394);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(982, 59);
+            tableLayoutPanel1.TabIndex = 3;
+            // 
+            // Box_group
+            // 
+            Box_group.Controls.Add(showHabit1);
+            Box_group.Location = new Point(0, 46);
+            Box_group.Name = "Box_group";
+            Box_group.Size = new Size(982, 348);
+            Box_group.TabIndex = 4;
+            Box_group.TabStop = false;
+            // 
+            // showHabit1
+            // 
+            showHabit1.Location = new Point(12, 17);
+            showHabit1.MaximumSize = new Size(350, 200);
+            showHabit1.MinimumSize = new Size(250, 200);
+            showHabit1.Name = "showHabit1";
+            showHabit1.Size = new Size(350, 200);
+            showHabit1.TabIndex = 0;
+            showHabit1.Load += showHabit1_Load;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 453);
-            Controls.Add(Btn_close);
+            ClientSize = new Size(982, 453);
+            Controls.Add(Box_group);
             Controls.Add(Lb_title);
-            Controls.Add(Btn_add);
+            Controls.Add(tableLayoutPanel1);
             MaximumSize = new Size(1000, 1000);
             MinimumSize = new Size(500, 500);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            Box_group.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -95,5 +135,8 @@ namespace Projekt_AWzorek_167366
         private Button Btn_add;
         private Label Lb_title;
         private Button Btn_close;
+        private TableLayoutPanel tableLayoutPanel1;
+        private GroupBox Box_group;
+        private ShowHabit showHabit1;
     }
 }

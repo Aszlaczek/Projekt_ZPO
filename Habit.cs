@@ -17,20 +17,21 @@ namespace Projekt_AWzorek_167366
     }
     class Habit : AbsHabit, IDescription
     {
-        private DateTime startDate { get; set; }
-        public string Description { get => Description; set => Description = value; }
+        public string Description { get; set; }
 
-        public Habit(string name)
+        public string ShowDescription()
+        {
+            return Description;
+        }
+
+        public Habit(string name, string desc)
         {
             this.name = name;
+            this.Description = desc;
             this.isDone = false;
-            this.startDate = new DateTime();
         }
 
-        public void SetStartDate(DateTime date)
-        {
-            this.startDate = date;
-        }
+
 
         public void ToggleDone()
         {

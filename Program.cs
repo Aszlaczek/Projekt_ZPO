@@ -6,6 +6,7 @@ namespace Projekt_AWzorek_167366
     {
        public static AppConfig? Config { get; set; }
 
+        public static HabitList HabitList { get; set; } = new HabitList();
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -15,7 +16,6 @@ namespace Projekt_AWzorek_167366
             
             string fileName = "config.json";
             
-
             string rawData = File.ReadAllText(fileName);
 
             var settings = JsonSerializer.Deserialize<AppConfig>(rawData);
@@ -27,6 +27,7 @@ namespace Projekt_AWzorek_167366
                 File.WriteAllText(fileName, JsonSerializer.Serialize(newSettings));
             }
             Config = settings;
+            HabitList.ReadFromFile();
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

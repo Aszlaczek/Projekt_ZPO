@@ -7,6 +7,7 @@ namespace Projekt_AWzorek_167366
     {
         public Form1()
         {
+
             InitializeComponent();
 
             // read from the config file and set the default font from confing file
@@ -19,11 +20,22 @@ namespace Projekt_AWzorek_167366
             {
                 this.Font = new Font(Program.Config.font, 15.0f);
             }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            Program.HabitList.ReadFromFile();
+
+            foreach (var habit in Program.HabitList.GetHabits())
+            {
+                ShowHabit showHabit = new ShowHabit() { };
+                this.Box_group.ControlAdded += (s, ev) =>
+                {
+                    showHabit.Name = habit.name;
+                    this.Box_group.Controls.Add(showHabit);
+                };
+            }
         }
 
         private void Btn_close_Click(object sender, EventArgs e)
