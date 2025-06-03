@@ -1,3 +1,4 @@
+using System.Runtime.Serialization.Json;
 using System.Windows.Forms;
 
 namespace Projekt_AWzorek_167366
@@ -7,11 +8,22 @@ namespace Projekt_AWzorek_167366
         public Form1()
         {
             InitializeComponent();
+
+            // read from the config file and set the default font from confing file
+
+            if (Program.Config != null)
+            {
+                this.Size = new Size(Program.Config.width, Program.Config.height);
+            }
+            else
+            {
+                this.Font = new Font(Program.Config.font, 15.0f);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Btn_close_Click(object sender, EventArgs e)

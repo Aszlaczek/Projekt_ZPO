@@ -8,18 +8,33 @@ using System.Threading.Tasks;
 
 namespace Projekt_AWzorek_167366
 {
-    class Habit
+
+    abstract class AbsHabit
     {
-        private string name { get; set; }
-        private string description { get; set; }
-        private bool isDone { get; set; }
+        public string name { get; set; }
+        public bool isDone { get; set; }
+
+    }
+    class Habit : AbsHabit, IDescription
+    {
         private DateTime startDate { get; set; }
-        public Habit(string name, string description, int frequency, bool isDone)
+        public string Description { get => Description; set => Description = value; }
+
+        public Habit(string name)
         {
             this.name = name;
-            this.description = description;
             this.isDone = false;
             this.startDate = new DateTime();
+        }
+
+        public void SetStartDate(DateTime date)
+        {
+            this.startDate = date;
+        }
+
+        public void ToggleDone()
+        {
+            this.isDone = !this.isDone;
         }
 
     }

@@ -38,7 +38,7 @@ namespace Projekt_AWzorek_167366
                 MessageBox.Show("Proszę wpisać nazwę nawyku", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Habit newHabit = new Habit(this.Inp_name.Text, this.Inp_desc.Text, 0, false);
+            Habit newHabit = new Habit(this.Inp_name.Text);
             
 
             // show info message
