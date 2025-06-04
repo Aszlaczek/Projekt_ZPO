@@ -33,10 +33,9 @@ namespace Projekt_AWzorek_167366
             Lb_title = new Label();
             Btn_close = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            Box_group = new GroupBox();
-            showHabit1 = new ShowHabit();
+            Main = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
-            Box_group.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Main).BeginInit();
             SuspendLayout();
             // 
             // Btn_add
@@ -91,31 +90,22 @@ namespace Projekt_AWzorek_167366
             tableLayoutPanel1.Size = new Size(982, 59);
             tableLayoutPanel1.TabIndex = 3;
             // 
-            // Box_group
+            // Main
             // 
-            Box_group.Controls.Add(showHabit1);
-            Box_group.Location = new Point(0, 46);
-            Box_group.Name = "Box_group";
-            Box_group.Size = new Size(982, 348);
-            Box_group.TabIndex = 4;
-            Box_group.TabStop = false;
-            // 
-            // showHabit1
-            // 
-            showHabit1.Location = new Point(12, 17);
-            showHabit1.MaximumSize = new Size(350, 200);
-            showHabit1.MinimumSize = new Size(250, 200);
-            showHabit1.Name = "showHabit1";
-            showHabit1.Size = new Size(350, 200);
-            showHabit1.TabIndex = 0;
-            showHabit1.Load += showHabit1_Load;
+            Main.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Main.Dock = DockStyle.Fill;
+            Main.Location = new Point(0, 46);
+            Main.Name = "Main";
+            Main.RowHeadersWidth = 51;
+            Main.Size = new Size(982, 348);
+            Main.TabIndex = 4;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 453);
-            Controls.Add(Box_group);
+            Controls.Add(Main);
             Controls.Add(Lb_title);
             Controls.Add(tableLayoutPanel1);
             MaximumSize = new Size(1000, 1000);
@@ -124,7 +114,7 @@ namespace Projekt_AWzorek_167366
             Text = "Form1";
             Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
-            Box_group.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)Main).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,7 +126,6 @@ namespace Projekt_AWzorek_167366
         private Label Lb_title;
         private Button Btn_close;
         private TableLayoutPanel tableLayoutPanel1;
-        private GroupBox Box_group;
-        private ShowHabit showHabit1;
+        private DataGridView Main;
     }
 }

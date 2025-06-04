@@ -1,13 +1,14 @@
 using System.Runtime.Serialization.Json;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projekt_AWzorek_167366
 {
     public partial class Form1 : Form
     {
+        HabitList habits = new HabitList();
         public Form1()
         {
-
             InitializeComponent();
 
             // read from the config file and set the default font from confing file
@@ -23,20 +24,6 @@ namespace Projekt_AWzorek_167366
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Program.HabitList.ReadFromFile();
-
-            foreach (var habit in Program.HabitList.GetHabits())
-            {
-                ShowHabit showHabit = new ShowHabit() { };
-                this.Box_group.ControlAdded += (s, ev) =>
-                {
-                    showHabit.Name = habit.name;
-                    this.Box_group.Controls.Add(showHabit);
-                };
-            }
-        }
 
         private void Btn_close_Click(object sender, EventArgs e)
         {
@@ -47,6 +34,20 @@ namespace Projekt_AWzorek_167366
         {
             AddedFormcs addedFormcs = new AddedFormcs();
             addedFormcs.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Main.DataSource = this.habits.GetHabits();
+            this.habits.GetHabits().ForEach(habits => {
+                Label habitLabel = new Label
+                {
+                    Text = $"{habits.name} - {habits.description}",
+                    AutoSize = true,
+                    Font = this.Font,
+                };
+                this.Controls.Add(habitLabel);
+            });
         }
     }
 

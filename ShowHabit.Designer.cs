@@ -43,11 +43,13 @@
             // 
             Lb_one_habit.AutoSize = true;
             Lb_one_habit.Dock = DockStyle.Top;
+            Lb_one_habit.Font = new Font("Segoe UI", 15F);
             Lb_one_habit.Location = new Point(0, 0);
             Lb_one_habit.Margin = new Padding(2);
             Lb_one_habit.Name = "Lb_one_habit";
-            Lb_one_habit.Size = new Size(0, 20);
+            Lb_one_habit.Size = new Size(100, 35);
             Lb_one_habit.TabIndex = 0;
+            Lb_one_habit.Text = "adwasd";
             // 
             // checkBox1
             // 

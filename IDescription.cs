@@ -8,7 +8,7 @@ namespace Projekt_AWzorek_167366
 {
     internal interface IDescription
     {
-        string Description { get; set; }
-        public string ShowDescription() {  return Description; }
+        string description { get; set; }
+        public string ShowDescription() {  return description; }
     }
 }

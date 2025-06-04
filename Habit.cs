@@ -17,21 +17,19 @@ namespace Projekt_AWzorek_167366
     }
     class Habit : AbsHabit, IDescription
     {
-        public string Description { get; set; }
+        public string description { get; set; }
 
         public string ShowDescription()
         {
-            return Description;
+            return description;
         }
 
-        public Habit(string name, string desc)
+        public Habit(string name, string description)
         {
             this.name = name;
-            this.Description = desc;
+            this.description = description;
             this.isDone = false;
         }
-
-
 
         public void ToggleDone()
         {

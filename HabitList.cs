@@ -7,31 +7,18 @@ namespace Projekt_AWzorek_167366
 {
     class HabitList
     {
-        private List<Habit> habits;
+        public List<Habit> habits { get; set; }
         public HabitList()
         {
-            habits = new List<Habit>();
+            ReadFromFile();
         }
 
         public void ReadFromFile()
         {
-            try
-            {
-                if (File.Exists("habits.json"))
-                {
-                    string json = File.ReadAllText("habits.json");
-                    var loaded = JsonSerializer.Deserialize<List<Habit>>(json);
-                    habits = loaded ?? new List<Habit>();
-                }
-                else
-                {
-                    habits = new List<Habit>();
-                }
-            }
-            catch
-            {
-                habits = new List<Habit>();
-            }
+            string json = File.ReadAllText("habits.json");
+            var loaded = JsonSerializer.Deserialize<List<Habit>>(json);
+            habits = loaded ?? new List<Habit>();       
+           
         }
 
         public void WriteToFile()
