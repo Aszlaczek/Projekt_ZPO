@@ -33,9 +33,8 @@ namespace Projekt_AWzorek_167366
             Lb_title = new Label();
             Btn_close = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            Main = new DataGridView();
+            Main = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Main).BeginInit();
             SuspendLayout();
             // 
             // Btn_add
@@ -92,11 +91,15 @@ namespace Projekt_AWzorek_167366
             // 
             // Main
             // 
-            Main.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Main.AutoScroll = true;
+            Main.ColumnCount = 1;
+            Main.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             Main.Dock = DockStyle.Fill;
             Main.Location = new Point(0, 46);
             Main.Name = "Main";
-            Main.RowHeadersWidth = 51;
+            Main.Padding = new Padding(50);
+            Main.RowCount = 1;
+            Main.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             Main.Size = new Size(982, 348);
             Main.TabIndex = 4;
             // 
@@ -114,7 +117,6 @@ namespace Projekt_AWzorek_167366
             Text = "Form1";
             Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Main).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -126,6 +128,6 @@ namespace Projekt_AWzorek_167366
         private Label Lb_title;
         private Button Btn_close;
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView Main;
+        private TableLayoutPanel Main;
     }
 }

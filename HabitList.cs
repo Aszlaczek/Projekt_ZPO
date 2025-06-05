@@ -42,17 +42,20 @@ namespace Projekt_AWzorek_167366
 
         public void RemoveHabit(Habit habit)
         {
-            if (habit == null || !habits.Contains(habit))
-            {
-                throw new ArgumentException("Habit not found in the list.");
-            }
-            habits.Remove(habit);
+            var newHaitsList = this.habits.Where(h => h.name != habit.name).ToList();
+            habits = newHaitsList;
             WriteToFile();
         }
 
         public List<Habit> GetHabits()
         {
             return habits;
+        }
+        public void UpdateHabit(Habit habit)
+        {
+            habit.isDone = !habit.isDone;
+            this.habits = this.habits.Select(h => h.name == habit.name ? habit : h).ToList();
+            WriteToFile();
         }
     }
 }

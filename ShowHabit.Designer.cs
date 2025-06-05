@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             Lb_one_habit = new Label();
-            checkBox1 = new CheckBox();
+            Box_done = new CheckBox();
             Btn_delete_habit = new Button();
             Btn_description = new Button();
             splitContainer1 = new SplitContainer();
@@ -51,16 +51,18 @@
             Lb_one_habit.TabIndex = 0;
             Lb_one_habit.Text = "adwasd";
             // 
-            // checkBox1
+            // Box_done
             // 
-            checkBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(261, 82);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(86, 24);
-            checkBox1.TabIndex = 1;
-            checkBox1.Text = "Zakończ";
-            checkBox1.UseVisualStyleBackColor = true;
+            Box_done.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Box_done.AutoSize = true;
+            Box_done.Font = new Font("Segoe UI", 12F);
+            Box_done.Location = new Point(241, 74);
+            Box_done.Name = "Box_done";
+            Box_done.Size = new Size(106, 32);
+            Box_done.TabIndex = 1;
+            Box_done.Text = "Zakończ";
+            Box_done.UseVisualStyleBackColor = true;
+            Box_done.CheckedChanged += Box_done_CheckedChanged;
             // 
             // Btn_delete_habit
             // 
@@ -71,6 +73,7 @@
             Btn_delete_habit.TabIndex = 2;
             Btn_delete_habit.Text = "Usuń";
             Btn_delete_habit.UseVisualStyleBackColor = true;
+            Btn_delete_habit.Click += Btn_delete_habit_Click_1;
             // 
             // Btn_description
             // 
@@ -81,6 +84,7 @@
             Btn_description.TabIndex = 3;
             Btn_description.Text = "Opis";
             Btn_description.UseVisualStyleBackColor = true;
+            Btn_description.Click += Btn_description_Click;
             // 
             // splitContainer1
             // 
@@ -105,7 +109,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(splitContainer1);
-            Controls.Add(checkBox1);
+            Controls.Add(Box_done);
             Controls.Add(Lb_one_habit);
             MaximumSize = new Size(350, 200);
             MinimumSize = new Size(250, 200);
@@ -122,7 +126,7 @@
         #endregion
 
         private Label Lb_one_habit;
-        private CheckBox checkBox1;
+        private CheckBox Box_done;
         private Button Btn_delete_habit;
         private Button Btn_description;
         private SplitContainer splitContainer1;

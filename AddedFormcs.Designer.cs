@@ -47,7 +47,6 @@
             Inp_name.Name = "Inp_name";
             Inp_name.Size = new Size(350, 50);
             Inp_name.TabIndex = 1;
-            Inp_name.TextChanged += Inp_name_TextChanged;
             // 
             // Inp_desc
             // 
@@ -59,7 +58,6 @@
             Inp_desc.Name = "Inp_desc";
             Inp_desc.Size = new Size(350, 100);
             Inp_desc.TabIndex = 1;
-            Inp_desc.TextChanged += Inp_name_TextChanged;
             // 
             // Lb_name
             // 

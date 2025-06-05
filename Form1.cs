@@ -27,6 +27,8 @@ namespace Projekt_AWzorek_167366
 
         private void Btn_close_Click(object sender, EventArgs e)
         {
+            // Save the current size and font to the config file before closing
+            this.habits.WriteToFile();
             this.Close();
         }
 
@@ -38,17 +40,26 @@ namespace Projekt_AWzorek_167366
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Main.DataSource = this.habits.GetHabits();
-            this.habits.GetHabits().ForEach(habits => {
-                Label habitLabel = new Label
-                {
-                    Text = $"{habits.name} - {habits.description}",
-                    AutoSize = true,
-                    Font = this.Font,
-                };
-                this.Controls.Add(habitLabel);
+            this.Main.ColumnCount = 2;
+            this.habits.GetHabits().ForEach(habits =>
+            {
+                ShowHabit showHabit = new ShowHabit();
+                showHabit.LoadHabit(habits);
+                this.Main.Controls.Add(showHabit);
+                
+            });
+        }
+
+        public void RefreshHabits()
+        {
+            this.Main.Controls.Clear();
+            habits.ReadFromFile();
+            this.habits.GetHabits().ForEach(habits =>
+            {
+                ShowHabit showHabit = new ShowHabit();
+                showHabit.LoadHabit(habits);
+                this.Main.Controls.Add(showHabit);
             });
         }
     }
-
 }

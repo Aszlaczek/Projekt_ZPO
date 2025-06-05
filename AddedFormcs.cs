@@ -15,7 +15,6 @@ namespace Projekt_AWzorek_167366
         public AddedFormcs()
         {
             InitializeComponent();
-
         }
 
         private void Btn_close_Click(object sender, EventArgs e)
@@ -25,10 +24,6 @@ namespace Projekt_AWzorek_167366
             this.Close();
         }
 
-        private void Inp_name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Btn_add_Click(object sender, EventArgs e)
         {
@@ -45,6 +40,13 @@ namespace Projekt_AWzorek_167366
             HabitList habits = new HabitList();
             habits.AddHabit(newHabit);
             habits.WriteToFile();
+
+            // Refresh the main form to show the new habit
+            Form1 mainForm = (Form1)Application.OpenForms["Form1"];
+            if (mainForm != null)
+            {
+                mainForm.RefreshHabits();
+            }
 
             // clear inputs
             this.Inp_name.Text = "";
