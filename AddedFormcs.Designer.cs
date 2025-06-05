@@ -45,6 +45,7 @@
             Inp_name.MaximumSize = new Size(350, 50);
             Inp_name.MinimumSize = new Size(150, 50);
             Inp_name.Name = "Inp_name";
+            Inp_name.PlaceholderText = "Nazwa";
             Inp_name.Size = new Size(350, 50);
             Inp_name.TabIndex = 1;
             // 
@@ -55,7 +56,9 @@
             Inp_desc.Location = new Point(164, 205);
             Inp_desc.MaximumSize = new Size(350, 250);
             Inp_desc.MinimumSize = new Size(150, 100);
+            Inp_desc.Multiline = true;
             Inp_desc.Name = "Inp_desc";
+            Inp_desc.PlaceholderText = "Opis";
             Inp_desc.Size = new Size(350, 100);
             Inp_desc.TabIndex = 1;
             // 
