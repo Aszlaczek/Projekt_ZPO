@@ -43,11 +43,11 @@
             // 
             Lb_one_habit.AutoSize = true;
             Lb_one_habit.Dock = DockStyle.Top;
-            Lb_one_habit.Font = new Font("Segoe UI", 15F);
+            Lb_one_habit.Font = new Font("Segoe UI", 18F);
             Lb_one_habit.Location = new Point(0, 0);
             Lb_one_habit.Margin = new Padding(2);
             Lb_one_habit.Name = "Lb_one_habit";
-            Lb_one_habit.Size = new Size(100, 35);
+            Lb_one_habit.Size = new Size(119, 41);
             Lb_one_habit.TabIndex = 0;
             Lb_one_habit.Text = "adwasd";
             // 
@@ -55,10 +55,13 @@
             // 
             Box_done.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             Box_done.AutoSize = true;
-            Box_done.Font = new Font("Segoe UI", 12F);
-            Box_done.Location = new Point(241, 74);
+            Box_done.BackgroundImageLayout = ImageLayout.None;
+            Box_done.Cursor = Cursors.Hand;
+            Box_done.FlatAppearance.CheckedBackColor = Color.ForestGreen;
+            Box_done.Font = new Font("Segoe UI", 18F);
+            Box_done.Location = new Point(197, 61);
             Box_done.Name = "Box_done";
-            Box_done.Size = new Size(106, 32);
+            Box_done.Size = new Size(150, 45);
             Box_done.TabIndex = 1;
             Box_done.Text = "Zakończ";
             Box_done.UseVisualStyleBackColor = true;
@@ -66,24 +69,33 @@
             // 
             // Btn_delete_habit
             // 
+            Btn_delete_habit.BackColor = Color.FromArgb(255, 192, 192);
+            Btn_delete_habit.Cursor = Cursors.Hand;
             Btn_delete_habit.Dock = DockStyle.Fill;
+            Btn_delete_habit.Font = new Font("Segoe UI", 12F);
+            Btn_delete_habit.ForeColor = Color.Red;
             Btn_delete_habit.Location = new Point(0, 0);
+            Btn_delete_habit.Margin = new Padding(0);
             Btn_delete_habit.Name = "Btn_delete_habit";
             Btn_delete_habit.Size = new Size(180, 36);
             Btn_delete_habit.TabIndex = 2;
             Btn_delete_habit.Text = "Usuń";
-            Btn_delete_habit.UseVisualStyleBackColor = true;
+            Btn_delete_habit.UseVisualStyleBackColor = false;
             Btn_delete_habit.Click += Btn_delete_habit_Click_1;
             // 
             // Btn_description
             // 
+            Btn_description.BackColor = Color.FromArgb(192, 255, 255);
+            Btn_description.Cursor = Cursors.Hand;
             Btn_description.Dock = DockStyle.Fill;
+            Btn_description.Font = new Font("Segoe UI", 12F);
+            Btn_description.ForeColor = Color.DarkOliveGreen;
             Btn_description.Location = new Point(0, 0);
             Btn_description.Name = "Btn_description";
             Btn_description.Size = new Size(168, 36);
             Btn_description.TabIndex = 3;
             Btn_description.Text = "Opis";
-            Btn_description.UseVisualStyleBackColor = true;
+            Btn_description.UseVisualStyleBackColor = false;
             Btn_description.Click += Btn_description_Click;
             // 
             // splitContainer1
@@ -108,6 +120,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(224, 224, 224);
             Controls.Add(splitContainer1);
             Controls.Add(Box_done);
             Controls.Add(Lb_one_habit);

@@ -39,8 +39,11 @@ namespace Projekt_AWzorek_167366
             // 
             // Btn_add
             // 
+            Btn_add.BackColor = Color.FromArgb(128, 255, 255);
+            Btn_add.Cursor = Cursors.Hand;
             Btn_add.Dock = DockStyle.Right;
             Btn_add.Font = new Font("Segoe UI", 12F);
+            Btn_add.ForeColor = Color.FromArgb(0, 64, 64);
             Btn_add.Location = new Point(829, 3);
             Btn_add.MaximumSize = new Size(150, 50);
             Btn_add.MinimumSize = new Size(150, 50);
@@ -48,14 +51,16 @@ namespace Projekt_AWzorek_167366
             Btn_add.Size = new Size(150, 50);
             Btn_add.TabIndex = 0;
             Btn_add.Text = "Dodaj Nawyk";
-            Btn_add.UseVisualStyleBackColor = true;
+            Btn_add.UseVisualStyleBackColor = false;
             Btn_add.Click += Btn_add_Click;
             // 
             // Lb_title
             // 
             Lb_title.AutoSize = true;
+            Lb_title.BackColor = Color.Transparent;
             Lb_title.Dock = DockStyle.Top;
             Lb_title.Font = new Font("Segoe UI", 20F);
+            Lb_title.ForeColor = Color.White;
             Lb_title.Location = new Point(0, 0);
             Lb_title.Margin = new Padding(10, 0, 10, 0);
             Lb_title.Name = "Lb_title";
@@ -65,13 +70,16 @@ namespace Projekt_AWzorek_167366
             // 
             // Btn_close
             // 
+            Btn_close.BackColor = Color.FromArgb(255, 192, 192);
+            Btn_close.Cursor = Cursors.Hand;
             Btn_close.Font = new Font("Segoe UI", 12F);
+            Btn_close.ForeColor = Color.FromArgb(192, 0, 0);
             Btn_close.Location = new Point(3, 3);
             Btn_close.Name = "Btn_close";
             Btn_close.Size = new Size(150, 50);
             Btn_close.TabIndex = 2;
             Btn_close.Text = "Zamknij";
-            Btn_close.UseVisualStyleBackColor = true;
+            Btn_close.UseVisualStyleBackColor = false;
             Btn_close.Click += Btn_close_Click;
             // 
             // tableLayoutPanel1
@@ -107,6 +115,7 @@ namespace Projekt_AWzorek_167366
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(982, 453);
             Controls.Add(Main);
             Controls.Add(Lb_title);

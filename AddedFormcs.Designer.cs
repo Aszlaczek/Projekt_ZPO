@@ -87,25 +87,31 @@
             // Btn_cancel
             // 
             Btn_cancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Btn_cancel.BackColor = Color.FromArgb(255, 192, 192);
+            Btn_cancel.Cursor = Cursors.Hand;
             Btn_cancel.Font = new Font("Segoe UI", 12F);
+            Btn_cancel.ForeColor = Color.FromArgb(192, 0, 0);
             Btn_cancel.Location = new Point(396, 373);
             Btn_cancel.Name = "Btn_cancel";
             Btn_cancel.Size = new Size(150, 50);
             Btn_cancel.TabIndex = 0;
             Btn_cancel.Text = "Odrzuć";
-            Btn_cancel.UseVisualStyleBackColor = true;
+            Btn_cancel.UseVisualStyleBackColor = false;
             Btn_cancel.Click += Btn_close_Click;
             // 
             // Btn_add
             // 
             Btn_add.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Btn_add.BackColor = Color.FromArgb(192, 255, 192);
+            Btn_add.Cursor = Cursors.Hand;
             Btn_add.Font = new Font("Segoe UI", 12F);
+            Btn_add.ForeColor = Color.FromArgb(0, 192, 0);
             Btn_add.Location = new Point(552, 373);
             Btn_add.Name = "Btn_add";
             Btn_add.Size = new Size(150, 50);
             Btn_add.TabIndex = 3;
             Btn_add.Text = "Dodaj";
-            Btn_add.UseVisualStyleBackColor = true;
+            Btn_add.UseVisualStyleBackColor = false;
             Btn_add.Click += Btn_add_Click;
             // 
             // Lb_new_item
