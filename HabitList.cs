@@ -16,6 +16,11 @@ namespace Projekt_AWzorek_167366
         public void ReadFromFile()
         {
             string json = File.ReadAllText("habits.json");
+            if(string.IsNullOrEmpty(json))
+            {
+                habits = new List<Habit>();
+                return;
+            }
             var loaded = JsonSerializer.Deserialize<List<Habit>>(json);
             habits = loaded ?? new List<Habit>();       
            
